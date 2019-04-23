@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CQMenuTableView"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "一个横向选择的菜单"
 
   spec.description  = <<-DESC 
