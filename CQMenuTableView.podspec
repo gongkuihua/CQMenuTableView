@@ -18,5 +18,5 @@ Pod::Spec.new do |spec|
   spec.source_files  = "CQMenuTableView/CQMenuTable/*"
   spec.public_header_files = "CQMenuTableView/CQMenuTable/*.h"
   spec.license      = "MIT"
-
+  spec.ios.deployment_target = '7.0'
 end
