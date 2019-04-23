@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CQMenuTableView"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "一个横向选择的菜单"
 
   spec.description  = <<-DESC 
@@ -9,7 +9,6 @@ Pod::Spec.new do |spec|
                    	  DESC
 
   spec.homepage     = "https://github.com/1174117917/CQMenuTableView"
-  spec.platform     = :ios
   
   spec.author             = { "GKH" => "gkh60@foxmail.com" }
   
@@ -17,6 +16,8 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "CQMenuTableView/CQMenuTable/*"
   spec.public_header_files = "CQMenuTableView/CQMenuTable/*.h"
+
   spec.license      = "MIT"
-  spec.ios.deployment_target = '7.0'
+  spec.platform     = :ios, "7.0"
+  spec.ios.deployment_target = "7.0"
 end
