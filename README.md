@@ -11,6 +11,7 @@
 # Usage
 
 ###只有标题
+
 	#import "CQMenuTabView.h"
 	
 	CQMenuTabView *menTable = [[CQMenuTabView alloc] initWithFrame:CGRectMake(15, 100, UIScreen.mainScreen.bounds.size.width-30, 44)];
@@ -33,7 +34,9 @@
     
     menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一"];
     
+
 ###其他样式,自定义
+
 	buildTabViewWithItems 使用这个函数自定义
 	
 # Install
