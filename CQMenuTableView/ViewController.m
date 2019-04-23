@@ -17,13 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    [self menTable1];
-    //    [self menTable2];
-    //    [self menTable3];
-    //    [self menTable4];
-    //    [self menTable5];
-    //    [self menTable6];
-    //    [self menTable7];
+    [self menTable1];
+    [self menTable2];
+    [self menTable3];
+    [self menTable4];
+    [self menTable5];
+    [self menTable6];
+    [self menTable7];
     [self menTable8];
     // Do any additional setup after loading the view.
 }

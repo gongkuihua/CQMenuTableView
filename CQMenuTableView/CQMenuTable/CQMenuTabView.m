@@ -275,6 +275,10 @@
                         lineView.frame = CGRectMake(lineView.frame.origin.x, lineView.frame.origin.y, lineView.frame.size.width, strongSelf.speaceLineHight);
                         lineView.center = CGPointMake(lineView.center.x, strongSelf.center.y);
                     }
+                    if (strongSelf.speaceLineHight>0) {
+                        lineView.frame = CGRectMake(lineView.frame.origin.x, lineView.frame.origin.y, lineView.frame.size.width, self.speaceLineHight);
+                        lineView.center = CGPointMake(lineView.center.x, label.center.y);
+                    }
                     [strongSelf addSubview:lineView];
                 }
             }
@@ -352,11 +356,12 @@
 
 - (void)setSpeaceLineHight:(CGFloat)speaceLineHight{
     _speaceLineHight = speaceLineHight;
+     UIView *contentView = self.tabViewItems.firstObject;
     for (int i = 0; i<self.tabViewItems.count; i++) {
         UIView *lineView = [self viewWithTag:i+kSpepaceLineTag];
         if (lineView) {
             lineView.frame = CGRectMake(lineView.frame.origin.x, lineView.frame.origin.y, lineView.frame.size.width, self.speaceLineHight);
-            lineView.center = CGPointMake(lineView.center.x, self.center.y);
+            lineView.center = CGPointMake(lineView.center.x, contentView.center.y);
         }
     }
 }
