@@ -1,8 +1,6 @@
 # CQMenuTableView
 一个支持多种形式的菜单,实用,扩展性强,使用简单
-
-![](https://upload-images.jianshu.io/upload_images/3889208-5814e16913b31671.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+<img src="https://upload-images.jianshu.io/upload_images/3889208-5814e16913b31671.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="iOS ScreenShot 1" width="240px" style="width: 240px;" />
 
 # Requirements
 - iOS 7.0 or later
