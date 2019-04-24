@@ -8,6 +8,15 @@
 - iOS 7.0 or later
 - ARC
 
+# Install
+## CocoaPods
+
+```
+pod 'CQMenuTableView'
+```
+## 手动导入
+下载项目,将项目中的CQMenuTableView托人你的项目中即可
+
 # Usage
 
 ## 只有标题
@@ -39,14 +48,6 @@
 
 	buildTabViewWithItems 使用这个函数自定义
 	
-# Install
-## CocoaPods
-
-```
-pod 'CQMenuTableView'
-```
-## 手动导入
-下载项目,将项目中的CQMenuTableView托人你的项目中即可
 # License
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
 [MIT]: http://www.opensource.org/licenses/mit-license.php
