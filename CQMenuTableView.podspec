@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/1174117917/CQMenuTableView"
   
-  s.author             = { "GKH" => "gkh60@foxmail.com" }
+  s.author       = { "GKH" => "gkh60@foxmail.com" }
   
   s.source       = { :git => "https://github.com/1174117917/CQMenuTableView.git", :tag => "#{spec.version}" }
 
