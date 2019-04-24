@@ -10,7 +10,7 @@
 
 # Usage
 
-##只有标题
+## 只有标题
 
 	#import "CQMenuTabView.h"
 	
@@ -35,7 +35,7 @@
     menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一"];
     
 
-##其他样式,自定义
+## 其他样式,自定义
 
 	buildTabViewWithItems 使用这个函数自定义
 	
@@ -45,7 +45,8 @@
 ```
 pod 'CQMenuTableView'
 ```
-
+## 手动导入
+下载项目,将项目中的CQMenuTableView托人你的项目中即可
 # License
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
 [MIT]: http://www.opensource.org/licenses/mit-license.php
