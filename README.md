@@ -48,6 +48,34 @@ pod 'CQMenuTableView'
 
 	buildTabViewWithItems 使用这个函数自定义
 	
+	//自定义
+	  CQMenuTabView *menTable = [[CQMenuTabView alloc] initWithFrame:CGRectMake(15, 400, UIScreen.mainScreen.bounds.size.width-30, 44)];
+  	 __block NSArray *titleArry =  @[@"分类一",@"分类一",@"分类一",@"分类一"];
+    [menTable buildTabViewWithItems:^NSArray *{
+        NSMutableArray *arry = [NSMutableArray array];
+        for (int i = 0; i<titleArry.count; i++) {
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 44)];
+            [button setTitle:titleArry[i] forState:UIControlStateNormal];
+            [arry addObject:button];
+        }
+        return arry;
+    }];
+    
+    menTable.didTapItemAtIndexBlock = ^(UIView *view, NSInteger index) {
+        NSLog(@"...%ld",(long)index);
+    };
+    
+    menTable.normalizeTabItemBlock = ^(UIView *view, NSInteger index) {
+        UIButton *button = (UIButton *)view;
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    };
+    
+    menTable.hightlightTabItemBlock = ^(UIView *view, NSInteger index) {
+        UIButton *button = (UIButton *)view;
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    };
+    [self.view addSubview:menTable];
+	
 # License
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
 [MIT]: http://www.opensource.org/licenses/mit-license.php
