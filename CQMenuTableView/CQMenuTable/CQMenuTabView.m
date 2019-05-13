@@ -240,7 +240,7 @@
     //刷新ui
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    
+    [self selectIndex:0];
 }
 
 #pragma mark - set,get

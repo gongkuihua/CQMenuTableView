@@ -25,7 +25,7 @@
     [self menTable6];
     [self menTable7];
     [self menTable8];
-    [self menTable9];
+    [self custoumDemo];
     // Do any additional setup after loading the view.
 }
 
@@ -214,23 +214,34 @@
     menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一"];
 }
 
-- (void)menTable9{
+- (void)custoumDemo{
      CQMenuTabView *menTable = [[CQMenuTabView alloc] initWithFrame:CGRectMake(15, 400, UIScreen.mainScreen.bounds.size.width-30, 44)];
-    menTable.titleFont = [UIFont systemFontOfSize:14];
-    menTable.normaTitleColor = [UIColor blackColor];
-    menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一"];
-    menTable.didSelctTitleColor = [UIColor redColor];
-    menTable.cursorStyle = CQTabCursorWrap;
-    menTable.layoutStyle = CQTabWrapContent;
-    menTable.showCursor = false;
-    menTable.cursorView.backgroundColor = [UIColor colorWithRed:255/255.0 green:202/255.0 blue:204/255.0 alpha:1.0];
-    menTable.backgroundColor = [UIColor whiteColor];
+   __block NSArray *titleArry =  @[@"分类一",@"分类一",@"分类一",@"分类一"];
+    [menTable buildTabViewWithItems:^NSArray *{
+        NSMutableArray *arry = [NSMutableArray array];
+        for (int i = 0; i<titleArry.count; i++) {
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 44)];
+            [button setTitle:titleArry[i] forState:UIControlStateNormal];
+            [arry addObject:button];
+        }
+        return arry;
+    }];
     
     menTable.didTapItemAtIndexBlock = ^(UIView *view, NSInteger index) {
         NSLog(@"...%ld",(long)index);
     };
+    
+    menTable.normalizeTabItemBlock = ^(UIView *view, NSInteger index) {
+        UIButton *button = (UIButton *)view;
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    };
+    
+    menTable.hightlightTabItemBlock = ^(UIView *view, NSInteger index) {
+        UIButton *button = (UIButton *)view;
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    };
     [self.view addSubview:menTable];
     
-    
+    menTable.backgroundColor = [UIColor yellowColor];
 }
 @end

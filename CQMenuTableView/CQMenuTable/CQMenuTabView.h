@@ -73,9 +73,6 @@ typedef void (^CQTabItemAtIndexBlock)(UIView *view, NSInteger index);
  */
 - (void)buildTabViewWithItems:(NSArray *(^)(void))tabViewItems;
 
-- (void)updateCursorToIndex:(NSInteger)index;
-
-
 /**
  选择第几个
  
