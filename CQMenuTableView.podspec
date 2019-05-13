@@ -8,11 +8,12 @@ Pod::Spec.new do |s|
   						"可以简单的实现横向选择菜单,实现滑动和均分"
                    	  DESC
 
-  s.homepage     = "https://github.com/1174117917/CQMenuTableView"
+  s.homepage     = "https://github.com/gongkuihua"
   
   s.author       = { "GKH" => "gkh60@foxmail.com" }
   
-  s.source       = { :git => "https://github.com/1174117917/CQMenuTableView.git", :tag => "#{spec.version}" }
+  # s.source       = { :git => "https://github.com/gongkuihua/CQMenuTableView.git", :tag => "#{spec.version}" }
+  s.source       = { :git => "https://github.com/gongkuihua/CQMenuTableView.git", :tag => "#{s.version}" }
 
   s.source_files  = "CQMenuTableView/CQMenuTable/*"
   s.public_header_files = "CQMenuTableView/CQMenuTable/*.h"
