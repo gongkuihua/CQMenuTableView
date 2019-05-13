@@ -53,7 +53,7 @@
         [self.tabViewItems enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
             __typeof__(self) strongSelf = weakSelf;
             CGFloat width = CGRectGetWidth(strongSelf.frame) / strongSelf.tabViewItems.count;
-            view.frame = (CGRect) {CGPointMake(idx * width, 0), CGSizeMake(width, CGRectGetHeight(strongSelf.frame))};
+            view.frame = CGRectMake(idx * width, 0, width, CGRectGetHeight(strongSelf.frame));
         }];
     } else {
         __block CGFloat contentWidth = self.tabViewItemMargin.left;
@@ -62,7 +62,7 @@
             [view sizeToFit];
             CGFloat width = CGRectGetWidth(view.frame)+16 + strongSelf.speaceWidth;
             CGFloat viewHeight = CGRectGetHeight(strongSelf.frame);
-            view.frame = (CGRect) {CGPointMake(contentWidth, (viewHeight - CGRectGetHeight(view.frame)) / 2), CGSizeMake(width, CGRectGetHeight(view.frame)+8)};
+            view.frame = CGRectMake(contentWidth, 0, width, viewHeight);
             
             contentWidth += (width + strongSelf.tabViewItemMargin.left);
             

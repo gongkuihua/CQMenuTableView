@@ -25,6 +25,7 @@
     [self menTable6];
     [self menTable7];
     [self menTable8];
+    [self menTable9];
     // Do any additional setup after loading the view.
 }
 
@@ -211,5 +212,25 @@
     [self.view addSubview:menTable];
     
     menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一"];
+}
+
+- (void)menTable9{
+     CQMenuTabView *menTable = [[CQMenuTabView alloc] initWithFrame:CGRectMake(15, 400, UIScreen.mainScreen.bounds.size.width-30, 44)];
+    menTable.titleFont = [UIFont systemFontOfSize:14];
+    menTable.normaTitleColor = [UIColor blackColor];
+    menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一"];
+    menTable.didSelctTitleColor = [UIColor redColor];
+    menTable.cursorStyle = CQTabCursorWrap;
+    menTable.layoutStyle = CQTabWrapContent;
+    menTable.showCursor = false;
+    menTable.cursorView.backgroundColor = [UIColor colorWithRed:255/255.0 green:202/255.0 blue:204/255.0 alpha:1.0];
+    menTable.backgroundColor = [UIColor whiteColor];
+    
+    menTable.didTapItemAtIndexBlock = ^(UIView *view, NSInteger index) {
+        NSLog(@"...%ld",(long)index);
+    };
+    [self.view addSubview:menTable];
+    
+    
 }
 @end
