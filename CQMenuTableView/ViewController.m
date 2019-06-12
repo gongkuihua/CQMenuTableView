@@ -65,6 +65,12 @@
     menTable.didTapItemAtIndexBlock = ^(UIView *view, NSInteger index) {
         NSLog(@"...%ld",(long)index);
     };
+    menTable.didCanSelectIndex = ^BOOL(UIView *view, NSInteger index) {
+        if (index == 1) {
+            return false;
+        }
+        return true;
+    };
     [self.view addSubview:menTable];
     
     menTable.titles = @[@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一",@"分类一"];

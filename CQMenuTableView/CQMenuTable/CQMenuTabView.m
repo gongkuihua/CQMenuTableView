@@ -76,6 +76,10 @@
 - (void)didTapped:(UITapGestureRecognizer *)gesture {
     
     NSInteger index = gesture.view.tag;
+    if (self.didCanSelectIndex) {
+        if (!self.didCanSelectIndex(gesture.view,index)) return;
+    }
+    
     self.cursorIndex = index;
     [self updateCursorToIndex:index];
     
@@ -178,10 +182,6 @@
     [self.tabViewItems enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         __typeof__(self) strongSelf = weakSelf;
         if (idx == strongSelf.cursorIndex) {
-            if (strongSelf.hightlightTabItemBlock) {
-                strongSelf.hightlightTabItemBlock(view, idx);
-                return ;
-            }
             if (strongSelf.didSelctTitleColor) {
                 if ([view isKindOfClass:[UILabel class]]) {
                     UILabel *lable = (UILabel *)view;
@@ -194,11 +194,12 @@
                     lable.font = strongSelf.didSelectTitleFont;
                 }
             }
-        } else {
-            if (strongSelf.normalizeTabItemBlock) {
-                strongSelf.normalizeTabItemBlock(view, idx);
-                return;
+            
+            if (strongSelf.hightlightTabItemBlock) {
+                strongSelf.hightlightTabItemBlock(view, idx);
             }
+           
+        } else {
             if (strongSelf.normaTitleColor) {
                 if ([view isKindOfClass:[UILabel class]]) {
                     UILabel *lable = (UILabel *)view;
@@ -210,6 +211,10 @@
                     UILabel *lable = (UILabel *)view;
                     lable.font = strongSelf.titleFont;
                 }
+            }
+            
+            if (strongSelf.normalizeTabItemBlock) {
+                strongSelf.normalizeTabItemBlock(view, idx);
             }
         }
     }];

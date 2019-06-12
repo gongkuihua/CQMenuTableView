@@ -6,34 +6,31 @@
 //
 
 #import <UIKit/UIKit.h>
-
 typedef NS_ENUM(NSInteger, CQTabLayoutStyle) {
-    CQTabFillParent,
-    CQTabWrapContent
+    CQTabFillParent,//是否铺满,控件大小相同,不支持滑动
+    CQTabWrapContent//是否根据自动识别大小,支持滑动
 };
 
 typedef NS_ENUM(NSInteger, CQTabCursorStyle) {
-    CQTabCursorUnderneath,
-    CQTabCursorWrap
+    CQTabCursorUnderneath,//点击选择下划线
+    CQTabCursorWrap//选中状态,全包裹
 };
 
-
 typedef void (^CQTabItemAtIndexBlock)(UIView *view, NSInteger index);
-
 @interface CQMenuTabView : UIView
 
 /**
  *  菜单按钮下方横线背景属性
  */
 @property (nonatomic, strong) UIView *cursorView;
-@property (nonatomic, assign) BOOL showCursor;
+@property (nonatomic, assign) BOOL showCursor;//是否显示下方横线
 @property (nonatomic, assign) CGFloat cursorAnimationDuration;
 @property (nonatomic, assign) CGFloat cursorHeight;
 @property (nonatomic, assign) CGFloat cursorWidth;
 @property (nonatomic, assign) CQTabCursorStyle cursorStyle;
 @property (nonatomic, assign) CGVector cursorWrapInset;
-@property (nonatomic, assign) NSInteger cursorIndex;
-@property (nonatomic, assign) CGFloat speaceWidth;
+@property (nonatomic, assign) NSInteger cursorIndex;//当前选中第几个
+@property (nonatomic, assign) CGFloat speaceWidth;//2个菜单直接的间距
 
 
 @property (nonatomic, assign) UIEdgeInsets tabViewItemMargin;
@@ -67,6 +64,11 @@ typedef void (^CQTabItemAtIndexBlock)(UIView *view, NSInteger index);
 
 
 /**
+ *  点击中状态包含是否允许点击
+ */
+@property (nonatomic,copy) BOOL (^didCanSelectIndex)(UIView *view, NSInteger index);
+
+/**
  自定义UI
 
  @param tabViewItems 定义的ui数组
@@ -89,3 +91,4 @@ typedef void (^CQTabItemAtIndexBlock)(UIView *view, NSInteger index);
  */
 - (void)selectIndex:(NSInteger)index animation:(BOOL)animation;
 @end
+
