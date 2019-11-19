@@ -47,7 +47,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.scrollView.showsHorizontalScrollIndicator=NO;
-    self.scrollView.bounds = self.bounds;
+    self.scrollView.frame = self.bounds;
     __weak __typeof__(self) weakSelf = self;
     if (self.layoutStyle == CQTabFillParent) {
         [self.tabViewItems enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
